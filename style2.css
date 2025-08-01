@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+HU:wght@100..400&family=Playwrite+PL:wght@100..400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Playwrite HU", cursive, sans-serif;
+}
+
+.back_to_main{
+    display: block;
+    margin: 10px;px;
+    width: max-content;
+}
+
+body{
+    background: white;
+}
+   
+.card{
+    margin: 10px auto;
+    background: rgb(43, 228, 151);
+    max-width: 900px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 1);
+    transition: 0.3s;
+}
+
+.card:hover{
+    transform: scale(1.02);
+}
+.card .favorite{
+    text-align: right;
+}
+
+.card .favorite:hover{
+    opacity: 0.8;
+}
+.card .favorite a{
+    text-decoration: none;
+}
+.card-img{
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    object-position: left;
+}
+
+.card h2{
+    margin: 16px 0px;
+    font-size: 20px;
+}
+
+.card .info{
+    text-align: justify;
+    text-indent: 20px;
+    margin:0px;
+    padding: 20px;
+}
+
+.card .price{
+    color: orange;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.card .old-price{
+    color: brown;
+    text-decoration: line-through;
+    font-size: 16px;
+}
+
+.card button{
+    background: linear-gradient(to right, rgb(255, 0, 93), rgb(219, 146, 29));
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card button:hover{
+    opacity: 0.5;
+}
+
+
+
+    
