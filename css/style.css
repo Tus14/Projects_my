@@ -1,22 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+:root {
+    --align-items: center;
+    --active-color: #131313;
+}
 *{
     box-sizing: border-box;
 }
 
 body{
-    font-family: "Oswald", sans-serif; ;
+    font-family: "Oswald", sans-serif;
 }
 
 a{
     text-decoration: none;
 }
-
+ /*Шапка сайта*/
 header{
     max-width: 1500px;
     margin: 0 auto;
     padding: 20px 40px 40px;
     display: flex;
-    align-items: center;
+    align-items: var(--align-items);
     justify-content: space-between;
 }
 
@@ -27,16 +31,16 @@ header{
     font-weight: 900;
     color: #66FF00;
 }
-
+/*Навигация*/
 nav{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: var(--align-items);
     gap:30px;
 }
 
 nav a{
-    color: #131313;
+    color: var(--active-color);
     font-size: 25px;
     text-align: center;
 }
@@ -48,13 +52,14 @@ button{
     cursor: pointer;
     transition: 0.3s;
 }
-
+/*Социальные сети и специальные символы
+*/
 .btn {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items:center;
+    align-items: var(--align-items);
     position: relative;
 }
 .btn img {
@@ -70,16 +75,16 @@ button:hover{
 
 .lang{
     display: flex;
-    align-items: center;
+    align-items: var(--align-items);
     gap: 3px;
 }
-
+/*Скрытое меню*/
 .burger-btn{
     background: transparent;
     padding: 0;
     display: none;
 }
-
+/*Меню*/
 .hero{
     height: 400px;
     background-image: url(../images/centr.jpeg);
@@ -159,12 +164,13 @@ h2{
 .about-us p{
     margin: 30px 0px;
     text-indent: 40px;
+    color: var(--active-color);
 }
 
 .cards{
     display: flex;
     flex-direction:row;
-    align-items: center;
+    align-items: var(--align-items);
     justify-content: space-between;
     gap: 10px;
 }
@@ -181,7 +187,7 @@ h2{
     width: 100px;
     height: 100px;
     display: flex;
-    align-items: center;
+    align-items: var(--align-items);
     justify-content: center;
     flex-direction: column;
     font-size: 20px;
@@ -214,6 +220,17 @@ h2{
     font-weight: 500;
     text-transform: none;
 }
+/*карта и контакты*/
+
+
+.contact-us {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+    max-width: 200px;
+    margin: 0 auto;
+}
 
 .content-wrapper {
     display: grid;
@@ -221,21 +238,15 @@ h2{
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-.content-wrapper .map-container .form-container {
-    display: flex;
-    flex-direction: row;
-    justify-content:left;
-    align-items: start;
-    gap: 60px;
-    max-width: 200px;
-    margin: 0 auto;
-}
-
 .map-container {
     flex: 1 1 560px;
     max-width: 560px;
     border: 5px;
     border-radius: 8px;
+}
+
+.map-container a {
+    color: var(--active-color);
 }
 
 .form-container {
@@ -247,6 +258,7 @@ h2{
     font-size: 25px;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 300;
+    color: var(--active-color);
 
 }
 .feedback input,
@@ -272,7 +284,7 @@ h2{
     margin: 10px auto;
     background-color: #0000FF;
 }
-
+/*Подвал*/
 footer{
     background: rgba(12, 192, 12, 0.97);
     padding: 60px;
@@ -336,6 +348,16 @@ footer{
     opacity: 0.5;
     color: #FFFFFF;
 }
+/*Адаптация*/
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1580px;
+    }
+    .logo{
+    font-size: 72px;
+    }
+
+}
 
 @media screen and (max-width: 992px){
     .burger-btn{
@@ -362,16 +384,39 @@ footer{
     .hero button, .hero-choose{
         width: max(50%, 200px);
     }
+
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+    }
+
     .contact-form-fields{
         grid-template-columns: repeat(1, 1fr);
         gap: 30px;
-        margin-top: 40px;
+        margin-top: 20px;
     }
     .contact-form{
         gap: 30px;
     }
-    
+    .form-container h3 {
+        font-size: 20px;
+    }
 
+    .form-container {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .form-container h3,
+    .feedback,
+    .map-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
     }
 
 @media screen and (max-width: 550px) {
@@ -405,10 +450,10 @@ footer{
     text-indent: 10px;
 }
 
-.content-wrapper .map-container .form-container {
+/*.content-wrapper .map-container .form-container {
     flex-direction: column;
     flex-wrap: wrap;
-}
+}*/
     
 }
 @media screen and (max-width: 450px) {
